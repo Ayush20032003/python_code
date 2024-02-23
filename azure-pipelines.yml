@@ -18,6 +18,14 @@ strategy:
       PYTHON_VERSION: '3.7'
   maxParallel: 3
 
+jobs:
+- deployment: VMDeploy
+  displayName: Deploy to VM
+  environment: 
+    name: testpipe
+    resourceType: virtualMachine
+    resourceName: linux-testing # only deploy to the VM resource named USHAN-PC
+
 steps:
 - task: UsePythonVersion@0
   inputs:
